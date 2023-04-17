@@ -10,8 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
+let uri = 'mongodb+srv://<username>:<pass>@cluster0.kptlkmc.mongodb.net/?retryWrites=true&w=majority'
 //connect database
-mongoose.connect("mongodb://localhost:27017/todolistDB", { useNewUrlParser: true });
+mongoose.connect(uri);
 
 //create database schema
 const itemSchema = {
@@ -139,9 +140,7 @@ app.post("/delete", function (req, res) {
             .catch(err => {
                 console.log(err);
             });
-
     }
-
 });
 
 app.listen(3000, function () {
