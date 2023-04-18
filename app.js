@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-let uri = 'mongodb+srv://<username>:<pass>@cluster0.kptlkmc.mongodb.net/?retryWrites=true&w=majority'
+let uri = 'mongodb+srv://rr4673:1234@cluster0.kptlkmc.mongodb.net/?retryWrites=true&w=majority'
 //connect database
 mongoose.connect(uri);
 
